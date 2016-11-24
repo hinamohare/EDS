@@ -1,0 +1,15 @@
+# These are all the requirements for this application
+python:latest
+configparser
+pymysql
+flask
+flask-sqlalchemy
+flask-wtf
+mysql-python
+sqlalchemy
+Flask==0.10.1
+Flask-SQLAlchemy==1.0
+Flask-WTF==0.9.3
+Flask-Script
+Flask-Migrate
+simplejson
