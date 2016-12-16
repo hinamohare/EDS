@@ -1,0 +1,61 @@
+node1:
+  build: .
+  command: python /code/app/app.py
+  ports:
+    - "3001:5000"
+  links:
+    - db1
+  hostname: node1
+
+db1:
+  hostname: db1
+  image: mysql:latest
+  ports:
+    - "3306:3306"
+  environment:
+     MYSQL_ROOT_PASSWORD: hina
+     MYSQL_DATABASE: expensedb
+  volumes:
+    - /var/lib/mysql
+
+
+node2:
+  build: .
+  command: python /code/app/app.py
+  ports:
+    - "3002:5000"
+  links:
+    - db2
+  hostname: node2
+
+db2:
+  hostname: db2
+  image: mysql:latest
+  ports:
+    - "3307:3306"
+  environment:
+     MYSQL_ROOT_PASSWORD: hina
+     MYSQL_DATABASE: expensedb
+  volumes:
+    - /var/lib/mysql
+
+  
+node3:
+  build: .
+  command: python /code/app/app.py
+  ports:
+    - "3003:5000"
+  links:
+    - db3
+  hostname: node3
+
+db3:
+  hostname: db3
+  image: mysql:latest
+  ports:
+    - "3308:3306"
+  environment:
+     MYSQL_ROOT_PASSWORD: hina
+     MYSQL_DATABASE: expensedb
+  volumes:
+    - /var/lib/mysql
